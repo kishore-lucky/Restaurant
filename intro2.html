@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Details</title>
+    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css">
+</head>
+<body onload="load()">
+    <nav class="navbar navbar-expand-lg navbar-dark" id="navbar">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">GULU GULU</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-expanded="false">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item ">
+                        <a class="nav-link" href="intro.html">HOME </a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="intro.html">ABOUT</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="intro.html">PRODUCT </a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="intro.html">CONTACT </a>
+                    </li>
+                </ul>
+                <button class="btn p-2 my-lg-0 my-2">Subscribe</button>
+            </div>
+        </div>
+    </nav>   
+    <section id="result">
+        <h2 id="value">MY value</h2>
+        <img id="img" class=menu-item-image src="">
+    </section>
+    <div class="order-form-details">
+        <form>
+            <!-- <div class="form-side">
+                <label for="val">ITEM ORDERED</label>
+                <input type="text" name="io" class= "gap" id="val" placeholder="value" >
+            </div><br> -->
+            <div class="form-side">
+                <label for="NAME">NAME</label>
+                <input type="text" name="NAME" id="NAME">
+            </div><br>
+            <div class="form-side">
+                <label for="add">ADDRESS</label>
+                <input type="text" name="add" id="add">
+            </div><br>
+            <div class="form-side">
+                <label for="num">PHONE-NUMBER</label>
+                <input type="text" name="num" id="num">
+            </div><br>
+            <div class="form-side">
+                <input type="submit" value="Confirm order" onclick="myfunc()">
+            </div><br>
+            <!-- <label for="io">ITEM ORDERED</label>
+            <input type="text" name="io" id="io" placeholder="Idli" disabled><br><br>
+            <label for="NAME">NAME</label>
+            <input type="text" name="NAME" id="NAME"><br><br>
+            <label for="add">ADDRESS</label>
+            <input type="text" name="add" id="add"><br><br>
+            <label for="num">PHONE-NUMBER</label>
+            <input type="text" name="num" id="num"><br><br>
+            <input type="submit" value="Confirm order" onclick="myfunc()"> -->
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"></script>
+    <script>
+        var item="";
+        function getUrlVars() {
+    var vars = {};
+    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+        vars[key] = value;
+    });
+    return vars;
+}
+        function load(){
+            var value = getUrlVars()['value']
+            document.getElementById('value').innerHTML = value;
+            item=value;
+            value="img/"+value+".jpg";
+            document.getElementById('img').setAttribute("src",value);
+        }
+    </script>
+    <script>
+        function myfunc() {
+            alert("YoUr FoOd Is OrDeReD");
+        }
+    </script>
+</body>
+</html>
